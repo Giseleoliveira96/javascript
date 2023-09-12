@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes e Depois</title>
+    <style>
+        h1 {
+            font: bold 30px Arial;
+        }
+        div {
+            font: normal 14px Arial;
+            background-color: #ECECEC;
+            border: 2px solid rgb(176, 168, 168);
+            margin: 5px;
+            padding: 20px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <div id="comando" onclick="clicar()">
+        Antecessor e Sucessor
+    </div>
+    <script>
+       var n = document.getElementById("comando")
+        
+       function clicar (){
+          
+            var n = Number(prompt('Digite um número inteiro qualquer'))
+             var n = Number(alert(`Antes de ${n}, temos o número ${n-1}.\nDepois de ${n}, temos o número ${n+1}`))
+             
+         }
+        
+    </script>
+</body>
+</html>
