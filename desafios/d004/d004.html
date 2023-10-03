@@ -21,12 +21,16 @@
         <input type="button" value="Comprar produto" id="valorCompra" onclick="clicar()">
     </div>
     <script>
-       
+        function clicar(){
+       var produto = prompt('Que produto está comprando?')
+       var valor = Number(prompt(`Quanto custa ${produto} que você está comprando?`))
+       var compra = Number(prompt(`Qual foi o valor que você deu para pagar ${produto}?`))
+       var troco = (valor-compra)
 
-      
+      alert(`Você comprou ${produto} que custou R$ ${valor.toFixed(2).replace('.',',')}.\nDeu R$ ${compra.toFixed(2).replace('.',',')} em dinheiro e vai receber R$ ${troco.toFixed(2).replace('.',',')} de troco.\n Volte Sempre!`)
             
            
-        
+    }    
     </script>
 </body>
 </html>
