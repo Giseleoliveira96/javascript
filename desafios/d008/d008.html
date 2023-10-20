@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de desconto</title>
+    <style>
+        body {
+            font: normal 16px Arial;
+        }
+        h1 {
+            font: bold 30px Arial;
+        }
+        input {
+
+            width: 140px;
+            height: 50px;
+        }    
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+
+    <input id="botão"  type="button" value="Desconto de 10%" >
+
+    <div id="resp">
+        <p>Clique no botão acima para iniciar.</p> 
+
+    
+
+    <script>
+        let botão = document.querySelector("input#botão")
+        let resp = document.querySelector("div#resp")
+
+        botão.addEventListener('click',calcular)
+
+        function calcular(){
+            let prod =prompt('Qual é o produto que você está comprando?')
+            let preço =parseFloat(prompt(`Qual é o preço de ${prod}?`))
+             let tot = (preço*10)/100
+             let final = (preço - tot)
+
+           
+           
+           resp.innerHTML = `<h2>Calculando desconto de 10% para ${prod}:</h2>
+           
+            <p>O preço original era R$ ${preço.toFixed(2).replace('.',',')}.</p>
+            <p>Você acaba de ganhar R$ ${tot.toFixed(2).replace('.',',')} de desconto (-10%).</p>
+            <p>No fim, você vai pagar R$ ${final.toFixed(2).replace('.',',')} no produto ${prod}.</p>`
+        }
+
+       
+
+    </script>
+</body>
+</html>
