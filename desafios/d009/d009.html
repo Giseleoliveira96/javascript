@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        body {
+            font: normal 16px Arial;
+        }
+        h1 {
+            font: bold 30px Arial;
+        }
+        input {
+
+            width: 150px;
+            height: 50px;
+        }    
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+
+    <input id="botão"  type="button" value="Reajustar Salário" >
+
+    <div id="resp">
+        <p>Clique no botão acima para iniciar.</p> 
+
+    <script>
+        let botão = document.querySelector("input#botão")
+        let resp = document.querySelector("div#resp")
+
+        botão.addEventListener('click',calcular)
+        
+        function calcular(){
+            let nome = prompt('Qual é o nome do funcionário?')
+            let sal = parseFloat(prompt(`Qual é o salário de ${nome}?`))
+            let porcentagem = parseFloat(prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
+            let tot = (porcentagem*sal)/100
+            let final = sal + tot
+
+            resp.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>
+            <p> O salário atual era R$ ${sal.toFixed(2).replace('.',',')}.</p>
+            <p> Com um aumento de ${porcentagem}%, o salário vai aumentar R$ ${tot.toFixed(2).replace('.',',')} no próximo mês.</p>
+            <p> E a partir daí, ${nome} vai passar a ganhar R$ ${final.toFixed(2).replace('.',',')}.</p>`
+            
+        }
+    </script>
+</body>
+</html>
